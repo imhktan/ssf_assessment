@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Screen 1 : Boardgame Search</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Boardgames Search</h1>
+
+    <form method="POST" action="/game">
+        <table>
+            <div class="salign">
+            <tr>
+                <td>
+                    <label for="name"> Name: </label>
+                </td>
+                <td>
+                    <input type="text" name="name" placeholder="Your search string" required id="name">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Find</button>
+                </td>
+            </tr>
+        </div>
+        </table>
+    </form>
+
+</body>
+</html>

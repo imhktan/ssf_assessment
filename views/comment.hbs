@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Screen 3 : Boardgame comments display </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+        <table >
+                <tr>
+                    <td>Name:</td>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <td>Published:</td>
+                    <td>{{year}}</td>
+                </tr>
+                <tr>
+                    <td>Ranking:</td>
+                    <td>{{ranking}}</td>
+                </tr>
+                <tr>
+                    <td>Users Rated:</td>
+                    <td>{{users_rated}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{url}}">View on Boardgame</a>
+                    </td>
+                    <td>
+                    <form method="GET" action="/">
+                        <button type="submit"> Back </button>
+                    </form>
+                    </td>
+                </tr>
+
+        </table>
+
+        <h3>Comments</h1>
+            {{#each cdata}}
+        <table border="1">
+                    <div class="calign">
+            <tbody >
+
+                <tr>
+                    <td>User:</td>
+                    <td> {{this.user}} </td>
+                   
+                </tr>
+                <tr>
+                    <td>Rating:</td>
+                    <td> {{this.rating}} </td>
+                   
+                </tr>
+                <tr>
+                    <td>{{this.c_text}}</td>
+                    
+                </tr>
+
+
+            </tbody>
+            </div>
+        </table>
+            {{/each}}
+        <table>
+            <tr>
+                <td>
+                    <form action="">
+                        <input type="hidden" value="{{prev_offset}}" name="offset">
+                        <button type="submit" {{disable_prev}}> Prev </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="hidden" value="{{next_offset}}" name="offset">
+                        <button type="submit" {{disable_next}}> Next </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    
+</body>
+</html>

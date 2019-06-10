@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Screen 2 : Boardgame Display</title>
+</head>
+<body>
+    <table>
+        <thead>Games with '{{name}}'</thead>
+    {{#each gdata}}
+        <tr>
+            <td>
+                    <form method="POST" action="/comment">
+                    <input type="hidden" name="gid" value="{{this.gid}}">
+                    <input type="hidden" name="name" value="{{this.name}}">
+                    <input type="hidden" name="year" value="{{this.year}}">
+                    <input type="hidden" name="ranking" value="{{this.ranking}}">
+                    <input type="hidden" name="users_rated" value="{{this.users_rated}}">
+                    <div class="myalign">
+                    <a href="comment">{{this.name}}</a>             
+                    </div>
+
+                    </form>
+
+            </td>
+        </tr>
+    {{/each}}
+    </table>
+        <table>
+            <tr>
+                <td>
+                    <form method="GET" action="/">
+                        <button type="submit"> Back </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    
+</body>
+</html>
